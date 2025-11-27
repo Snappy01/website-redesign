@@ -1,0 +1,123 @@
+.about {
+    padding: 8rem 0;
+    background: var(--bg-secondary);
+    overflow: hidden;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.mapContainer {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.worldMap {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.cityNode {
+    filter: drop-shadow(0 0 5px var(--color-primary));
+}
+
+.cityLabel {
+    font-family: var(--font-main);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.connectionLine {
+    filter: drop-shadow(0 0 2px var(--color-secondary));
+}
+
+.statItem {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(5, 5, 5, 0.9);
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.statNumber {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.description {
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.description p {
+    margin-bottom: 1rem;
+}
+
+.description strong {
+    color: var(--text-primary);
+}
+
+.features {
+    display: flex;
+    gap: 2rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.featureIcon {
+    color: var(--color-primary);
+}
+
+@media (max-width: 968px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .imageCol {
+        order: 2;
+    }
+}
