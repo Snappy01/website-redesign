@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Briefcase, Target } from 'lucide-react';
+import Globe3D from './Globe3D';
 import styles from './About.module.css';
 
 const About = () => {
@@ -16,28 +17,7 @@ const About = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <div className={styles.mapContainer}>
-                            {/* Abstract World Map SVG */}
-                            <svg className={styles.worldMap} viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M150,100 Q200,50 250,100 T350,150 T450,100 T550,150 T650,100" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" />
-                                {/* Simplified continents outlines or dots could go here. For "clean" look, we use stylized dots/lines */}
-
-                                {/* Paris Node */}
-                                <circle cx="380" cy="140" r="6" fill="var(--color-primary)" className={styles.cityNode}>
-                                    <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" />
-                                </circle>
-                                <text x="380" y="125" fill="white" fontSize="12" textAnchor="middle" className={styles.cityLabel}>Paris</text>
-
-                                {/* Beijing Node */}
-                                <circle cx="620" cy="160" r="6" fill="var(--color-primary)" className={styles.cityNode}>
-                                    <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" begin="1s" />
-                                </circle>
-                                <text x="620" y="145" fill="white" fontSize="12" textAnchor="middle" className={styles.cityLabel}>Beijing</text>
-
-                                {/* Connection Line */}
-                                <path d="M380,140 Q500,80 620,160" fill="none" stroke="var(--color-secondary)" strokeWidth="2" strokeDasharray="10 5" className={styles.connectionLine}>
-                                    <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite" />
-                                </path>
-                            </svg>
+                            <Globe3D />
 
                             <div className={styles.statItem}>
                                 <span className={styles.statNumber}>10+</span>

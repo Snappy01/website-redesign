@@ -13,6 +13,7 @@
     font-size: 2.5rem;
     margin-bottom: 1rem;
     background: linear-gradient(to right, #fff, #a1a1aa);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -29,40 +30,75 @@
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2.5rem;
-    border-radius: 16px;
-    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.3), rgba(112, 0, 255, 0.3));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(0, 242, 255, 0.2);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 242, 255, 0.3);
+    box-shadow: 0 12px 48px 0 rgba(0, 242, 255, 0.2);
+}
+
+.card:hover::before {
+    opacity: 1;
 }
 
 .iconWrapper {
     width: 64px;
     height: 64px;
-    background: rgba(0, 242, 255, 0.1);
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.2), rgba(112, 0, 255, 0.2));
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
     margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 16px rgba(0, 242, 255, 0.2);
 }
 
 .cardTitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    position: relative;
+    z-index: 1;
 }
 
 .cardDescription {
     color: var(--text-secondary);
     line-height: 1.7;
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 768px) {

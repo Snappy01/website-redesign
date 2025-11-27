@@ -5,6 +5,18 @@
     overflow: hidden;
 }
 
+.techStack::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, var(--bg-secondary));
+    pointer-events: none;
+    z-index: 1;
+}
+
 .header {
     text-align: center;
     margin-bottom: 6rem;
